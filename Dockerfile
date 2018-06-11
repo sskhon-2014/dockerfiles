@@ -30,7 +30,5 @@ RUN conda install --quiet --yes \
 ARG JUPYTERHUB_VERSION=0.6
 RUN pip install --no-cache jupyterhub==$JUPYTERHUB_VERSION
 
-# Install Jupyter Notebook and Hub
-RUN conda install --quiet --yes \
-    'notebook=5.0.*' \
-    'jupyterhub=0.6.*' 
+ARG JUPYTER_VERSION=5.0.0
+RUN pip install --no-cache jupyterhub==$JUPYTER_VERSION
