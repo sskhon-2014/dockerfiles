@@ -1,11 +1,31 @@
 FROM jupyter/base-notebook:c7d997f2db86
-# Built from... https://hub.docker.com/r/jupyter/base-notebook/
-#               https://github.com/jupyter/docker-stacks/blob/master/base-notebook/Dockerfile
-# Built from... Ubuntu 16.04
 
-# conda/pip/apt install additional packages here, if desired.
 
-# pin jupyterhub to match the Hub version
-# set via --build-arg in Makefile
+
+RUN conda install --quiet --yes \
+    'conda-forge::blas=*=openblas' \
+    'ipywidgets=7.2*' \
+    'pandas=0.22*' \
+    'numexpr=2.6*' \
+    'matplotlib=2.1*' \
+    'scipy=1.0*' \
+    'seaborn=0.8*' \
+    'scikit-learn=0.19*' \
+    'scikit-image=0.13*' \
+    'sympy=1.1*' \
+    'cython=0.28*' \
+    'patsy=0.5*' \
+    'statsmodels=0.8*' \
+    'cloudpickle=0.5*' \
+    'dill=0.2*' \
+    'numba=0.38*' \
+    'bokeh=0.12*' \
+    'sqlalchemy=1.2*' \
+    'hdf5=1.10*' \
+    'h5py=2.7*' \
+    'vincent=0.4.*' \
+    'beautifulsoup4=4.6.*' 
+
+
 ARG JUPYTERHUB_VERSION=0.9.*
 RUN pip install --no-cache jupyterhub==$JUPYTERHUB_VERSION
