@@ -30,3 +30,7 @@ RUN conda install --quiet --yes \
 ARG JUPYTERHUB_VERSION=0.6
 RUN pip install --no-cache jupyterhub==$JUPYTERHUB_VERSION
 
+RUN conda install --quiet --yes \
+     'notebook=5.0.*' 
+RUN conda uninstall --quiet --yes \   
+     'jupyterlab=0.32.*'
