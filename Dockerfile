@@ -27,5 +27,5 @@ RUN conda install --quiet --yes \
     'beautifulsoup4=4.6.*' 
 
 
-ARG JUPYTERHUB_VERSION=0.9.*
+ARG JUPYTERHUB_VERSION=0.7.*
 RUN pip install --no-cache jupyterhub==$JUPYTERHUB_VERSION
