@@ -6,6 +6,8 @@ LABEL maintainer="Jupyter Project <jupyter@googlegroups.com>"
 
 USER root
 
+
+RUN cp /Users/DarthRNA/Desktop/graphy/. $HOME/graphy
 # ffmpeg for matplotlib anim
 RUN apt-get update && \
     apt-get install -y --no-install-recommends ffmpeg && \
